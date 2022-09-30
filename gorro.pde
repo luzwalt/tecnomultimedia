@@ -1,29 +1,53 @@
-class Gorro {
-  //  Booleanas para agarrar y soltae
-  // iamgen del gorro
-  //  x, y, tam del gorro
-  Gorro() {
-    //cargamos la imagen
+// tp4
+//Luz Walter
+//Luz's closet
+
+// images
+PImage fondo;
+PImage modelo;
+Botas b;
+Top t;
+Pantalones p;
+void setup() {
+  size(1000, 800);
+  b=new Botas();
+  t=new Top();
+  p=new Pantalones();
+}
+void draw() {
+  //llamamos funcion de juego dibujar
+  fondo = loadImage("fondo.jpg");
+  image(fondo, 0, 0, 1000, 800);
+  modelo = loadImage("modelo.png");
+  image(modelo, 0, 0, 1000, 800);
+  println(mouseX, mouseY);
+  b.Dibujar();
+  t.Dibujar();
+  p.Dibujar();
+  if(b.mover){
+  t.mover=false;
+  p.mover=false;
   }
-  void Dibujar() {
-    //dibujamos el gorro
+  if(t.mover){
+  b.mover=false;
+  p.mover=false;
   }
-  void Agarrar() {
-    /* Si el mouse esta en la imagen
-     Agarra la imagen
-     */
-    // si agarra
-    // La x toma los valores del mouse en x
-    // La y toma los valores del mouse en y
-    //}
+  if(p.mover){
+  t.mover=false;
+  b.mover=false;
   }
-  void Soltar(float xc, float yc) {
-    // Toma la X de la cabeza  
-    // Toma la Y de la cabeza
-    // Se toma la distancia entre el gorro y la cabeza
-    // Se le da la X al gorro
-    // Se le da la Y al gorro
-    //
-    // Suelta el gorro
+  if (mousePressed) {
+    b.Funcion();
+    t.Funcion();
+    p.Funcion();
   }
+}
+void mousePressed() {
+  //llamamos la funcion de juego FuncionAgarrar
+}
+void mouseReleased() {
+  //llamamos la funcion de juego FuncionSoltar
+  b.Soltar();
+  t.Soltar();
+  p.Soltar();
 }
