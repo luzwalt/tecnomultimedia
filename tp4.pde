@@ -1,8 +1,9 @@
 // tp4
 //Luz Walter
 //Luz's closet
+https://youtu.be/LB9xUs9D_W4
 
-// images
+// imagenes
 PImage fondo;
 PImage modelo;
 Botas b;
