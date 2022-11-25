@@ -1,12 +1,12 @@
 class dragones {
 
-  dragon[] tras;
+  dragon[] drag;
   int i;
   dragones() { 
 
-    tras = new dragon[4];   
+    drag = new dragon[4];   
     for (i=0; i<4; i++){
-      tras[i] = new dragon((i*115)+60);
+      drag[i] = new dragon((i*115)+60);
     }
   }
 
@@ -14,16 +14,16 @@ class dragones {
   void dibujar() {
 
     for (i=0; i<4; i++){
-      tras[i].dibujar();
+      drag [i].dibujar();
     }
   }   
 
 
-  float posXp(int i) {  
-    return tras[i].Px();
+  float posX(int i) {  
+    return drag [i].Posx();
   }  
 
-  float posYp(int i) {  
-    return tras[i].Py();
+  float posY(int i) {  
+    return drag [i].Posy();
   }
 }  

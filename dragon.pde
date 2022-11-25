@@ -41,11 +41,11 @@ class dragon {
     }
   }
 
-  float Px() {
+  float Posx() {
     return x;
   }  
 
-  float Py() {
+  float Posy() {
     return y;
   }
 }
