@@ -6,7 +6,7 @@ class dragon {
 
 
   dragon(int _y) {
-    tam = 130;
+    tam = 150;
     x= random(400, 1030);
     y= _y;
     dragon = loadImage( "dragon.png");
@@ -21,7 +21,7 @@ class dragon {
    if(second() % 5 == 0)
      ok = false;
       else
-       ok = true;
+     ok = true;
      
     
     if(ok){

@@ -25,9 +25,9 @@ PImage principe;
        if ((keyCode== DOWN) && (y < 300))
          y = y + 105;
                 
-       if((keyCode== LEFT) &&(x > 1))
+       if((keyCode== LEFT) && (x > 1))
                 x= x - 5; 
-       if((keyCode== RIGHT) &&(x < 750))
+       if((keyCode== RIGHT) && (x < 750))
                 x= x + 5; 
   }
 

@@ -1,6 +1,6 @@
 class Juego {
   String estado; 
-  PImage ini,per,gan,cred,ins;
+  PImage ini,per,gan,cred,ins,tiempo;
   Fondo fondo;
   Personaje personaje;
   dragones dragon;
@@ -16,6 +16,7 @@ class Juego {
     gan= loadImage( "ganaste.png");
     cred= loadImage( "creditos.jpg");
     ins= loadImage( "instrucciones.jpg");
+    tiempo = loadImage( "tiempo.png");
     estado = "inicio";
   }
 
@@ -48,13 +49,12 @@ class Juego {
        image(ini, 0, 0, width, height);
        if(mousePressed & mouseX > 700)
          estado = "nivel1";
-         
-        if(mousePressed & mouseX > 400)
-         image(ins, 0, 0, width, height);
-
-          
-         if(mousePressed & mouseX < 300)
-            estado = "creditos";
+         else
+        if(mousePressed & mouseX  < 300)
+         estado = "creditos";
+         else 
+         if(mousePressed & mouseX < 500)
+            estado = "instrucciones";
            
          
     }else
@@ -71,8 +71,14 @@ class Juego {
          personaje.dibujar();
          colision();
          ganaste();
+         rect(10, 10, 95, 50);
+         noStroke();
+         fill(255,0,0);
          text(m/100, 50, 50);
-         textSize (30);
+         image(tiempo, 10, 10, 50, 50);
+         textSize(150);         
+         fill(150, 143, 238);
+         
          if(m < 0 )
           estado = "perdiste";
 
@@ -82,7 +88,7 @@ class Juego {
       if(audio2.isPlaying())
         audio2.pause();
        else
-     audio2.play();
+        audio2.play();
      
         image(per, 0, 0, width, height);
          if(mousePressed){
@@ -106,6 +112,12 @@ class Juego {
         image(cred, 0, 0, width, height);
           if(mousePressed & mouseX > 700)
            estado = "inicio";
+         }
+         else
+         if(estado == "instrucciones"){
+          image(ins, 0, 0, width, height);
+          if(mousePressed & mouseX > 700)
+          estado = "inicio";
          }
   }
 
