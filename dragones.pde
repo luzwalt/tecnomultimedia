@@ -4,8 +4,8 @@ class dragones {
   int i;
   dragones() { 
 
-    drag = new dragon[4];   
-    for (i=0; i<4; i++){
+    drag = new dragon[4];   // arreglo que tiene 4 dragones  = ARREGLO DE OBJETOS
+    for (i=0; i<4; i++) {
       drag[i] = new dragon((i*115)+60);
     }
   }
@@ -13,7 +13,7 @@ class dragones {
 
   void dibujar() {
 
-    for (i=0; i<4; i++){
+    for (i=0; i<4; i++) {
       drag [i].dibujar();
     }
   }   
